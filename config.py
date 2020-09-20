@@ -1,4 +1,4 @@
-token = '1343088184:AAFDinY7Mgw6ozl42Sxd8DA3TKIBBnkdy4Y'
+token = ''
 
 ref_sticker_part_1 = 'CAACAgIAAxkBAAI'
 
