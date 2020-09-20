@@ -1,6 +1,6 @@
 import random
-import phrase_pack
 import config
+import phrase_pack
 import sticker_pack
 import telebot
 
@@ -10,7 +10,7 @@ from telebot.types import Message
 bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(content_types=['text'])
-def sticker (message: Message):
+def reply(message: Message):
 
     input_message = str(message.text)
 
@@ -29,7 +29,6 @@ def sticker (message: Message):
     if check_question:
         bot.reply_to(message, phrase_pack.reply_question[random_question])
 
-
     sticker_chance = random.random() * 100
 
     sticker_length = len(sticker_pack.sticker_pack) - 1
@@ -46,7 +45,7 @@ def sticker (message: Message):
         bot.send_message(message.chat.id, phrase_pack.reply_other[random_reply])
 
 @bot.message_handler(content_types=['sticker'])
-def reply (message: Message):
+def sticker(message: Message):
 
     sticker_part_1 = ''
     sticker_part_2 = ''
@@ -73,24 +72,19 @@ def reply (message: Message):
             is_positive = 1
 
     if is_positive != 1:
-
         prob_reply = random.random() * 100
 
         if prob_reply > 80:
-
             number_replies = len(phrase_pack.reply_negative) - 1
-
             ran_int = [0] * (number_replies + 1)
             max_index = 0
 
             for number_rand in range(999):
-
                 nn = random.randint(0, number_replies)
 
                 for i in range(0, number_replies):
                     if nn == i:
                         ran_int[i] = ran_int[i] + 1
-
 
             for i in range(0, number_replies):
                 if ran_int[i] > ran_int[max_index]:
