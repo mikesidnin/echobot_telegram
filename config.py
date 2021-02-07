@@ -1,5 +1,6 @@
 token = ''
 
+# Части id стикера
 ref_sticker_part_1 = 'CAACAgIAAxkBAAI'
 
 ref_sticker_part_2 = ['4x-HD2UY5UaBA', '19FvcyfnBMaBA', 'fNRHp2OvY0aBA', '1WXB5IDbEEaBA', 'nzUR6djr2NGgQ',
